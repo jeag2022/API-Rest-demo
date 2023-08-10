@@ -1,6 +1,5 @@
 package com.example.SpringMVC_Project.model.dto;
 
-import com.example.SpringMVC_Project.model.Product;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -8,9 +7,7 @@ import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-@Getter
-@Setter
+@Data
 public class ItemDTO {
     @NotBlank(message = "Invalid Code: Empty code")
     @NotNull(message = "Invalid Code: Code is NULL")

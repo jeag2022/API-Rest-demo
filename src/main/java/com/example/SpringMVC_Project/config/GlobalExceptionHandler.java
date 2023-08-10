@@ -18,15 +18,16 @@ import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<Map<String, List<String>>> handleValidationErrors(MethodArgumentNotValidException ex) {
+    public ResponseEntity<Map<String, List<String>>> handleValidationException(MethodArgumentNotValidException ex) {
         List<String> errors =
                 ex
-                .getBindingResult()
-                .getFieldErrors()
-                .stream()
-                .map(FieldError::getDefaultMessage)
-                .collect(Collectors.toList());
+                        .getBindingResult()
+                        .getFieldErrors()
+                        .stream()
+                        .map(FieldError::getDefaultMessage)
+                        .collect(Collectors.toList());
         return new ResponseEntity<>(getErrorsMap(errors), HttpStatus.BAD_REQUEST);
     }
 
@@ -34,7 +35,7 @@ public class GlobalExceptionHandler {
     public ResponseEntity<Map<String, List<String>>> handleNotFoundException(RuntimeException ex) {
         List<String> errors =
                 Collections
-                .singletonList(ex.getMessage());
+                        .singletonList(ex.getMessage());
         return new ResponseEntity<>(getErrorsMap(errors), HttpStatus.NOT_FOUND);
     }
 

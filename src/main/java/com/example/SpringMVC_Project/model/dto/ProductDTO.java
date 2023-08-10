@@ -6,9 +6,7 @@ import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-@Getter
-@Setter
+@Data
 public class ProductDTO {
     private Integer product_id;
     @NotBlank(message = "Invalid Name: Empty name")

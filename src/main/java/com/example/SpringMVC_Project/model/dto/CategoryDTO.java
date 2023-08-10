@@ -7,12 +7,10 @@ import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
-@Getter
-@Setter
+@Data
 public class CategoryDTO {
     @NotBlank(message = "Invalid Name: Empty name")
     @NotNull(message = "Invalid Name: Name is NULL")
-    @Size(min = 5, max = 15, message = "Invalid Name: Must be of 3 - 30 characters")
+    @Size(min = 5, max = 15, message = "Invalid Name: Must be of 5 - 15 characters")
     private String name;
 }

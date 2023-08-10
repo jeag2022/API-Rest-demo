@@ -1,8 +1,6 @@
 package com.example.SpringMVC_Project.controller.rest;
 
-import com.example.SpringMVC_Project.exception.ProductNotFoundException;
 import com.example.SpringMVC_Project.model.Item;
-import com.example.SpringMVC_Project.model.Product;
 import com.example.SpringMVC_Project.model.dto.ItemDTO;
 import com.example.SpringMVC_Project.repository.ItemRepository;
 import com.example.SpringMVC_Project.repository.ProductRepository;
@@ -17,6 +15,7 @@ import java.util.List;
 
 
 @RestController
+@RequestMapping("/api")
 public class ItemController {
     @Autowired
     private ItemService itemService;

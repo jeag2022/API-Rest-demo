@@ -15,8 +15,6 @@ import org.springframework.stereotype.Service;
 @Transactional
 @Service
 public class ProductService {
-    @PersistenceContext
-    private EntityManager entityManager;
     @Autowired
     private ProductRepository productRepository;
     @Autowired
